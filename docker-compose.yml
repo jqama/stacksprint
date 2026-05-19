@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  # 1. Node.js Task Service
+  task-service:
+    build: ./services/task-service
+    ports:
+      - "4000:4000"
+
+  # 2. Python Analytics Service
+  analytics-service:
+    build: ./services/analytics-service
+    ports:
+      - "8000:8000"
+
+  # 3. Java User Service
+  user-service:
+    build: ./services/user-service
+    ports:
+      - "8080:8080"
+
+  # 4. Next.js Web Client
+  web-client:
+    build: ./apps/web-client
+    ports:
+      - "3000:3000"
+    # Wait for backends to be running before starting frontend
+    depends_on:
+      - task-service
+      - analytics-service
+      - user-service
