@@ -64,7 +64,11 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
-        
+
+    - name: Make Maven Wrapper executable
+      working-directory: ./services/user-service
+      run: chmod +x mvnw        
+      
     - name: Run JUnit Tests
       working-directory: ./services/user-service
       run: ./mvnw test      
