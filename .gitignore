@@ -1,3 +1,35 @@
+# =========================
+# OS & IDE Files
+# =========================
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.log
+
+# =========================
+# Node.js (Task Service & Web Client)
+# =========================
+node_modules/
+dist/
+coverage/
+.npm/
+.env
+
+# =========================
+# Python (Analytics Service)
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+venv/
+env/
+
+# =========================
+# Java / Spring Boot (User Service)
+# =========================
+target/
 # Compiled class file
 *.class
 

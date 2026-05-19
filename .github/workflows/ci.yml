@@ -17,3 +17,14 @@ jobs:
     steps:
     - name: Print Hello JQAMA
       run: echo "Hello, JQAMA!!"
+  test-task-service:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v3
+
+    - name: Setup Node.js 24
+      uses: actions/setup-node@v3
+      with:
+        node-version: 24
+      
