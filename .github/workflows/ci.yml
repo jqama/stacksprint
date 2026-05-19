@@ -20,7 +20,7 @@ jobs:
   test-task-service:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout Code
+    - name: Checkout Node.js Code
       uses: actions/checkout@v3
 
     - name: Setup Node.js 24
@@ -68,7 +68,31 @@ jobs:
     - name: Make Maven Wrapper executable
       working-directory: ./services/user-service
       run: chmod +x mvnw        
-      
+
     - name: Run JUnit Tests
       working-directory: ./services/user-service
-      run: ./mvnw test      
+      run: ./mvnw test
+
+  test-web-client-e2e:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Next.js code
+      uses: actions/checkout@v3
+
+    - name: Set up Node.js 24
+      uses: actions/setup-node@v3
+      with:
+        node-version: '24'
+        
+    - name: Install dependencies
+      working-directory: ./apps/web-client
+      run: npm install
+      
+    # Playwright requires the actual browser binaries to be downloaded
+    - name: Install Playwright Browsers
+      working-directory: ./apps/web-client
+      run: npx playwright install --with-deps
+      
+    - name: Run Playwright E2E tests
+      working-directory: ./apps/web-client
+      run: npx playwright test
