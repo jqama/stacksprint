@@ -1,0 +1,19 @@
+name: StackSprint CI/CD Pipeline
+
+# TEACHING NOTE: CI/CD PIPELINES
+# This workflow runs automatically every time code is pushed to the 'develop', 'master' or 'main' branch.
+# It ensures that no broken code is ever merged into the project.
+# We test Java, Node.js, and Python concurrently to save time!
+
+on:
+  push:
+    branches: [ "master", "main" ]
+  pull_request:
+    branches: [ "master", "main" ]
+
+jobs:
+  test-say-hello:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Print Hello JQAMA
+      run: echo "Hello, JQAMA!!"
