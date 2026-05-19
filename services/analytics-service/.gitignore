@@ -1,0 +1,10 @@
+# =========================
+# Python (Analytics Service)
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+venv/
+venvjq/
+env/
