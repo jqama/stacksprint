@@ -19,7 +19,7 @@ StackSprint is a platform for developer teams to manage their tasks, track progr
 ## Monorepo Structure
 
 ```
-devtaskr/
+stacksprint/
 ├── apps/                 # Frontend applications
 │   └── web-client/       # Next.js React frontend
 ├── services/             # Backend microservices

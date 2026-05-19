@@ -31,5 +31,5 @@ graph TD
 ## DevOps & Infrastructure
 
 - **Dockerization**: Every service is encapsulated in its own Docker container via multi-stage builds.
-- **Orchestration**: `docker-compose.yml` links all services into a unified `devtaskr_net` bridge network.
+- **Orchestration**: `docker-compose.yml` links all services into a unified `stacksprint_net` bridge network.
 - **CI/CD**: GitHub Actions provides continuous integration, running automated test suites for Java, Node, and Python on every push to the `develop` branch.
